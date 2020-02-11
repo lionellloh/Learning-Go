@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 )
 
@@ -18,13 +19,15 @@ func main() {
 
 			return
 		} else{
-			u, _ := strconv.Atoi(u)
-			arr = append(arr, u)
-			fmt.Println(arr)
+			u, err := strconv.Atoi(u)
+			if err == nil {
+				arr = append(arr, u)
+				sort.Ints(arr)
+				fmt.Println(arr)
+			} else {
+				fmt.Println(err)
+			}
 		}
-
 	}
-
-
 
 }
