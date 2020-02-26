@@ -1,4 +1,4 @@
-package main
+package wk4
 
 import (
 	"bufio"
